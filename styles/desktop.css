@@ -1,0 +1,49 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --heading_font: 'Montserrat', sans-serif;
+    --paragraph_font: 'Open Sans', sans-serif;
+    ;
+    --primary_color: red;
+    --secondary_color: white;
+    --ascent_color: black;
+}
+
+.nav-container a {
+    text-decoration: none;
+
+}
+
+ul li {
+    list-style: none;
+
+}
+
+ul li a {
+    text-decoration: none;
+
+}
+
+nav {
+    width: 100%;
+
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-decoration: none;
+    
+}
+
+.nav-links {
+    display: flex;
+    gap: 1.5em;
+    font-size: small;
+    justify-content: flex-end;
+}

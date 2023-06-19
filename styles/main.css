@@ -1,0 +1,335 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--paragraph_font);
+}
+
+:root {
+    --heading_font: 'Libre Baskerville', serif;
+    --paragraph_font: 'Open Sans', sans-serif;
+    --primary_color: red;
+    --secondary_color: white;
+    --ascent_color: black;
+}
+
+/* Header Styling */
+.nav-container a {
+    text-decoration: none;
+
+}
+
+ul li {
+    list-style: none;
+
+}
+
+ul li a {
+    text-decoration: none;
+
+}
+
+nav {
+    width: 100%;
+    padding: 0.4em;
+    position: sticky;
+    top: 0;
+    z-index: 99999999;
+
+
+}
+
+nav h1 a {
+    font-family: var(--heading_font);
+
+}
+
+.nav-container {
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    align-items: center;
+    text-decoration: none;
+    margin: 0 0.8em;
+
+}
+
+.nav-container ul li {
+    padding: 0.6em;
+}
+
+.nav-container ul li a:hover {
+    transition: 0.2s ease-in-out;
+    color: red;
+}
+
+.nav-links {
+    position: absolute;
+    display: none;
+    background-color: white;
+    font-size: small;
+    font-family: var(--paragraph_font);
+    top: -7px;
+    left: -19px;
+    width: 60%;
+    height: 100vh;
+    padding: 1em;
+
+}
+
+
+
+.hero-menu {
+    display: none;
+
+}
+
+nav i:hover {
+    cursor: pointer;
+}
+
+.fa-xmark {
+    position: relative;
+    left: 92%;
+    top: -1%;
+    margin: 0.8em 0;
+}
+
+.img-container {
+    position: relative;
+    object-fit: contain;
+    background: #000;
+}
+
+.hero-img {
+    position: relative;
+    width: 100%;
+    min-height: 50vh;
+    object-fit: cover;
+    overflow: hidden;
+    opacity: 0.4;
+}
+
+.hero-text {
+    position: absolute;
+    color: white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 70%;
+}
+
+.hero-text h1 {
+    font-family: var(--heading_font);
+    font-size: x-large;
+    margin-bottom: 0.5em;
+}
+
+.hero-text p {
+    font-size: small;
+    margin-bottom: 2em;
+}
+
+.Hero-btn {
+    padding: 5px 20px;
+    font-family: var(--paragraph_font);
+    text-decoration: none;
+    font-size: small;
+    border-radius: 20px;
+}
+
+.menu {
+    background-color: #FF6666;
+    color: #FFFFFF;
+    margin-right: 5px;
+}
+
+.menu:hover {
+    background-color: rgb(255, 80, 80);
+}
+
+.reservation {
+    border: 1px solid rgb(62, 62, 62);
+    color: #FFFFFF;
+}
+
+.reservation:hover {
+    background-color: #282828;
+}
+
+.fa-arrow-right {
+    font-size: small;
+}
+
+/* Body About us Sections  */
+.wrapper {
+    padding: 0 1em;
+}
+
+.small {
+    font-size: small;
+    margin-top: 3em;
+    margin-bottom: 0.3em;
+}
+
+h2 {
+    font-family: var(--heading_font);
+}
+
+.content-info {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.5em;
+}
+
+.content-info p {
+    font-size: 14px;
+    margin-bottom: 1em;
+}
+
+.content-image {
+    flex: 1;
+    object-fit: cover;
+
+}
+
+.section-img {
+    width: 100%;
+    min-width: 300px;
+    opacity: 0.9;
+}
+
+.section {
+    flex: 1;
+    min-width: 300px;
+
+}
+
+.content-info>div {
+    flex: 1;
+    min-width: 300px;
+}
+
+/* speciality section */
+
+main {
+    max-width: 1078px;
+    margin: 0 auto;
+}
+
+h3 {
+    font-family: var(--heading_font);
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+.section-specialty {
+    padding: 2em 0;
+
+}
+
+.specialty-items {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2em;
+
+    position: relative;
+}
+
+.specialty-item-img {
+    position: relative;
+    width: 100%;
+    max-height: 245px;
+    max-width: 425px;
+    transition: all 0.3s ease-in-out;
+    
+}
+
+.specialty-item-img:hover {
+    opacity: .4;
+
+}
+.speciality-item-text-fastFood {
+    position: absolute;
+    display: block;
+    font-weight: bolder;    
+    top: 12%;
+    left: 42%;
+    color: white;
+}
+
+.specialty-item-img:hover + .speciality-item-text-fastFood {
+    display: block;
+}
+
+.speciality-item-text-chinese {
+    position: absolute;
+    display: block;
+    font-weight: bolder;
+    top: 83%;
+    left: 32%;
+    color: white;
+}
+
+.specialty-item-img:hover + .speciality-item-text-chinese {
+    display: block;
+}
+
+.speciality-item-text-italian {
+    position: absolute;
+    display: block;
+    font-weight: bolder;
+    top: 47%;
+    left: 39%;
+    color: white;
+}
+
+.specialty-item-img:hover + .speciality-item-text-italian {
+    display: block;
+}
+
+.specialty-item-fastFood {
+    background-color: #000;
+    opacity: 0.9;
+    width: 100%;
+    max-width: 425px;
+    max-height: 245px;
+}
+
+.specialty-item-italian {
+    background-color: #000;
+    opacity: 0.9;
+    width: 100%;
+    max-width: 425px;
+    max-height: 245px;
+}
+
+.specialty-item-chinese {
+    background-color: #000;
+    opacity: 0.9;
+    width: 100%;
+    max-width: 425px;
+    max-height: 245px;
+
+}
+
+.primary-btn {
+    padding: 4px 13px;
+    font-family: var(--paragraph_font);
+    text-decoration: none;
+    border-radius: 20px;
+    background-color:#FF6666;
+    color: #FFFFFF;
+    text-decoration: none;
+    text-align: center;
+}
+
+.learn-more {
+    margin-top: 5px;
+    position: absolute;
+    font-size: x-small;
+}
