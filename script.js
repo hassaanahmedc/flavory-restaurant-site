@@ -23,7 +23,7 @@ const close_toggle = () => {
 menu_close.addEventListener("click", close_toggle);
 toggle_menu.addEventListener("click", open_toggle);
 
-
+// Food Menue Cards 
 const cardsContainer = document.getElementById("food-cards-container");
 const loadmoreBtn = document.getElementById("load-more-btn");
 
@@ -47,7 +47,7 @@ const foodCards = [
     title: 'Italian Pizza',
     price: 'Rs 420',
     description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Mollitia ad itaque enim assumenda, illum magnam sunt tempore id.Adipisci, ut."
-  }, 
+  },
 
   {
     image: "resources/images/body/cone.jpg",
@@ -61,7 +61,7 @@ const foodCards = [
     title: 'Chinese Dim Sum',
     price: 'Rs 2500',
     description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Mollitia ad itaque enim assumenda, illum magnam sunt tempore id.Adipisci, ut."
-  }, 
+  },
 
   {
     image: "resources/images/body/tempura.jpg",
@@ -108,10 +108,67 @@ const renderCards = () => {
   cardsContainer.insertAdjacentHTML("beforeend", cardMarkUp);
   currentCardIndex += cardsPerLoad;
 
-  if (remainingItems <= cardsPerLoad){
+  if (remainingItems <= cardsPerLoad) {
     loadmoreBtn.style.display = "none";
   }
 
 };
 
 loadmoreBtn.addEventListener("click", renderCards);
+
+
+// Testmonials Data
+const testmonialsContainer = document.getElementById("testmonials-container");
+
+const testmonialCards = [
+  {
+    image: "resources/images/body/customer-img2.jpg",
+    custonerName: "Lida",
+    Comment: "Lorem ipsum dolor sit amet consectetur adipisicing elit. In magnam, earum cumque distinctio, facere necessitatibus praesentium possimus neque recusandae sed libero veritatis dolorem ratione delectus doloremque.",
+  }, 
+
+  {
+    image: "resources/images/body/customer-img2.jpg",
+    custonerName: "Lida",
+    Comment: "Lorem ipsum dolor sit amet consectetur adipisicing elit. In magnam, earum cumque distinctio, facere necessitatibus praesentium possimus neque recusandae sed libero veritatis dolorem ratione delectus doloremque.",
+  }, 
+
+  {
+    image: "resources/images/body/customer-img2.jpg",
+    custonerName: "Lida",
+    Comment: "Lorem ipsum dolor sit amet consectetur adipisicing elit. In magnam, earum cumque distinctio, facere necessitatibus praesentium possimus neque recusandae sed libero veritatis dolorem ratione delectus doloremque.",
+  }
+]
+
+const testmonialsMarkup = (cardInfo) => {
+  return `
+      <div class="testmonial-card">
+        <figure class="testmonial-img-container">
+          <img src="${cardInfo.image}" alt="Customer Image">
+        </figure>
+        <article class="feedback-box">
+          <div class="rating-stars">
+            <i class="fa-solid fa-star" style="color: #282828"></i>
+            <i class="fa-solid fa-star" style="color: #282828"></i>
+            <i class="fa-solid fa-star" style="color: #282828"></i>
+            <i class="fa-solid fa-star" style="color: #282828"></i>
+            <i class="fa-solid fa-star" style="color: #282828"></i>
+          </div>
+          <p id="cutomer-review">${cardInfo.Comment}</p>
+          <i class="fa-solid fa-quote-left feedback-quotes" style="color: #ff8080;"></i>
+          <h6 id="customer-name">${cardInfo.custonerName}</h6>
+          <i class="fa-solid fa-quote-right feedback-quotes" style="color: #ff8080;"></i>
+        </article>
+    </div>
+    `
+}
+
+const renderTestmonials = () => {
+
+  const cardsIndex = testmonialCards.slice(0, -1);
+  const cardMarkUp = cardsIndex.map((card) => testmonialsMarkup(card)).join("");
+  testmonialsContainer.insertAdjacentHTML("afterbegin", cardMarkUp);
+
+};
+
+renderTestmonials();
