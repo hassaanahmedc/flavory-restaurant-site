@@ -125,13 +125,13 @@ const testmonialCards = [
     image: "resources/images/body/customer-img2.jpg",
     custonerName: "Lida",
     Comment: "Lorem ipsum dolor sit amet consectetur adipisicing elit. In magnam, earum cumque distinctio, facere necessitatibus praesentium possimus neque recusandae sed libero veritatis dolorem ratione delectus doloremque.",
-  }, 
+  },
 
   {
     image: "resources/images/body/customer-img2.jpg",
     custonerName: "Lida",
     Comment: "Lorem ipsum dolor sit amet consectetur adipisicing elit. In magnam, earum cumque distinctio, facere necessitatibus praesentium possimus neque recusandae sed libero veritatis dolorem ratione delectus doloremque.",
-  }, 
+  },
 
   {
     image: "resources/images/body/customer-img2.jpg",
@@ -172,3 +172,25 @@ const renderTestmonials = () => {
 };
 
 renderTestmonials();
+
+
+const leftArrow = document.querySelector(".fa-arrow-left")
+const cards = document.querySelectorAll(".testmonial-card")
+
+let currentCard = 0;
+let maxCards = cards.length - 1
+
+cards.forEach((card, index) => {
+  card.style.transform = `translateX(${index * 110}%)`
+})
+
+leftArrow.addEventListener("click", () => {
+  if (currentCard === maxCards) {
+    currentCard = 0
+  } else {
+    currentCard++
+  }
+  cards.forEach((card, index) => {
+    card.style.transform = `translateX(${(index - currentCard) * 110}%)`
+  })
+})
