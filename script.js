@@ -135,7 +135,7 @@ const testmonialCards = [
 
   {
     image: "resources/images/body/customer-img2.jpg",
-    custonerName: "Lida",
+    custonerName: "Nona",
     Comment: "Lorem ipsum dolor sit amet consectetur adipisicing elit. In magnam, earum cumque distinctio, facere necessitatibus praesentium possimus neque recusandae sed libero veritatis dolorem ratione delectus doloremque.",
   }
 ]
@@ -174,7 +174,8 @@ const renderTestmonials = () => {
 renderTestmonials();
 
 
-const leftArrow = document.querySelector(".fa-arrow-left")
+const leftArrow = document.querySelector("#crousel-arrow-left")
+const rightArrow = document.querySelector("#crousel-arrow-right")
 const cards = document.querySelectorAll(".testmonial-card")
 
 let currentCard = 0;
@@ -185,6 +186,17 @@ cards.forEach((card, index) => {
 })
 
 leftArrow.addEventListener("click", () => {
+  if (currentCard === 0) {
+    currentCard = maxCards;
+  } else {
+    currentCard--
+  }
+  cards.forEach((card, index) => {
+    card.style.transform = `translateX(${(index - currentCard) * 110}%)`
+  })
+})
+
+rightArrow.addEventListener("click", () => {1
   if (currentCard === maxCards) {
     currentCard = 0
   } else {
