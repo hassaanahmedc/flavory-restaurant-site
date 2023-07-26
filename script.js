@@ -72,7 +72,7 @@ const foodCards = [
 ]
 const generateCards = (cardInfo) => {
   return `
-    <div class="food-card">
+    <div class="food-card from-bottom">
     <div class="card-image-container">
       <img
         src="${cardInfo.image}"
@@ -196,7 +196,8 @@ leftArrow.addEventListener("click", () => {
   })
 })
 
-rightArrow.addEventListener("click", () => {1
+rightArrow.addEventListener("click", () => {
+  1
   if (currentCard === maxCards) {
     currentCard = 0
   } else {
@@ -205,4 +206,24 @@ rightArrow.addEventListener("click", () => {1
   cards.forEach((card, index) => {
     card.style.transform = `translateX(${(index - currentCard) * 110}%)`
   })
+})
+
+// Smooth scrolling
+// const slider = document.querySelectorAll(".slide-up");
+const slider = document.querySelectorAll(".from-bottom");
+const options = {
+  threshold: .8,
+}
+
+const appearOnScroll = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    entry.target.classList.toggle("fade-in", entry.isIntersecting)
+    if (entry.isIntersecting) appearOnScroll.unobserve(entry.target)
+  }
+  )
+}, options)
+
+// slider.forEach((item) => {appearOnScroll.observe(item)})
+slider.forEach(slide => {
+  appearOnScroll.observe(slide)
 })

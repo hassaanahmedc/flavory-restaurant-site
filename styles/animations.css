@@ -1,0 +1,24 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* .from-bottom {
+    transform: translateY(30%);
+}
+
+.from-bottom.appear {
+    transform: translateY(0);
+} */
+.from-bottom {
+    opacity: 0;
+    transform: translateY(30%);
+    transition: 500ms ease-in;
+}
+
+
+.fade-in {
+    opacity: 1;
+    transform: translateY(0);
+}

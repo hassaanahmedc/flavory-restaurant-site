@@ -77,8 +77,6 @@ nav h1 a {
 
 }
 
-
-
 .hero-menu {
     display: none;
 
@@ -535,7 +533,7 @@ h3 {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    
+
 }
 
 .contact-us-container h3 {
@@ -588,9 +586,9 @@ h3 {
 }
 
 form button {
-     border: none;
-     line-height: 25 px;
-     margin-bottom: 1em;
+    border: none;
+    line-height: 25 px;
+    margin-bottom: 1em;
 }
 
 /* Footer Styling */
@@ -611,6 +609,7 @@ form button {
 .footer .ft-wrapper .column {
     flex: 1;
 }
+
 .footer .ft-wrapper .column h6 {
     font-size: 1rem;
 }
@@ -625,6 +624,7 @@ form button {
     padding-top: .5em;
     font-size: .8rem;
 }
+
 .footer .ft-wrapper .column article ul li {
     list-style: none;
 }
@@ -637,6 +637,7 @@ form button {
 .newsletter-field {
     padding: .3em;
 }
+
 .newsletter-link {
     background-color: #ff4343;
     padding: .2em .5em;
