@@ -72,7 +72,7 @@ const foodCards = [
 ]
 const generateCards = (cardInfo) => {
   return `
-    <div class="food-card from-bottom">
+    <div class="food-card">
     <div class="card-image-container">
       <img
         src="${cardInfo.image}"
@@ -212,7 +212,7 @@ rightArrow.addEventListener("click", () => {
 // const slider = document.querySelectorAll(".slide-up");
 const slider = document.querySelectorAll(".from-bottom");
 const options = {
-  threshold: .8,
+  threshold: 1,
 }
 
 const appearOnScroll = new IntersectionObserver((entries) => {
