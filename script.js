@@ -29,42 +29,48 @@ const loadmoreBtn = document.getElementById("load-more-btn");
 
 const foodCards = [
   {
-    image: "resources/images/body/cone.jpg",
+    placeholder_image: "resources/images/body/low-res/cone.gif",
+    orignal_image: "resources/images/body/cone.jpg",
     title: 'Ice Cream Cone',
     price: 'Rs 120',
     description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Mollitia ad itaque enim assumenda, illum magnam sunt tempore id.Adipisci, ut."
   },
 
   {
-    image: "resources/images/body/fried-rice.jpg",
+    placeholder_image: "resources/images/body/low-res/fried-rice.gif",
+    orignal_image: "resources/images/body/fried-rice.jpg",
     title: 'Chinese Fried Rice',
     price: 'Rs 230',
     description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Mollitia ad itaque enim assumenda, illum magnam sunt tempore id.Adipisci, ut."
   },
 
   {
-    image: "resources/images/body/pizza.jpg",
+    placeholder_image: "resources/images/body/low-res/pizza.gif",
+    orignal_image: "resources/images/body/pizza.jpg",
     title: 'Italian Pizza',
     price: 'Rs 420',
     description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Mollitia ad itaque enim assumenda, illum magnam sunt tempore id.Adipisci, ut."
   },
 
   {
-    image: "resources/images/body/cone.jpg",
+    placeholder_image: "resources/images/body/low-res/cone.gif",
+    orignal_image: "resources/images/body/cone.jpg",
     title: '3 Scops Cone',
     price: 'Rs 80',
     description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Mollitia ad itaque enim assumenda, illum magnam sunt tempore id.Adipisci, ut."
   },
 
   {
-    image: "resources/images/body/dim sum.jpg",
+    placeholder_image: "resources/images/body/low-res/dim sum.gif",
+    orignal_image: "resources/images/body/dim sum.jpg",
     title: 'Chinese Dim Sum',
     price: 'Rs 2500',
     description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Mollitia ad itaque enim assumenda, illum magnam sunt tempore id.Adipisci, ut."
   },
 
   {
-    image: "resources/images/body/tempura.jpg",
+    placeholder_image: "resources/images/body/low-res/tempura.gif",
+    orignal_image: "resources/images/body/tempura.jpg",
     title: 'Tempura Fish',
     price: 'Rs 2140',
     description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Mollitia ad itaque enim assumenda, illum magnam sunt tempore id.Adipisci, ut."
@@ -75,8 +81,10 @@ const generateCards = (cardInfo) => {
     <div class="food-card">
     <div class="card-image-container">
       <img
-        src="${cardInfo.image}"
+        src="${cardInfo.placeholder_image}"
+        data-src="${cardInfo.orignal_image}"
         alt="${cardInfo.title}"
+        loading="lazy"
       />
     </div>
     <div class="card-info">
@@ -122,19 +130,22 @@ const testmonialsContainer = document.getElementById("testmonials-container");
 
 const testmonialCards = [
   {
-    image: "resources/images/body/customer-img2.jpg",
+    placeholder_image: "resources/images/body/low-res/customer-img2.gif",
+    orignal_image: "resources/images/body/customer-img2.jpg",
     custonerName: "Lida",
     Comment: "Lorem ipsum dolor sit amet consectetur adipisicing elit. In magnam, earum cumque distinctio, facere necessitatibus praesentium possimus neque recusandae sed libero veritatis dolorem ratione delectus doloremque.",
   },
 
   {
-    image: "resources/images/body/customer-img2.jpg",
+    placeholder_image: "resources/images/body/low-res/customer-img2.gif",
+    orignal_image: "resources/images/body/customer-img2.jpg",
     custonerName: "Lida",
     Comment: "Lorem ipsum dolor sit amet consectetur adipisicing elit. In magnam, earum cumque distinctio, facere necessitatibus praesentium possimus neque recusandae sed libero veritatis dolorem ratione delectus doloremque.",
   },
 
   {
-    image: "resources/images/body/customer-img2.jpg",
+    placeholder_image: "resources/images/body/low-res/customer-img1.gif",
+    orignal_image: "resources/images/body/customer-img1.jpg",
     custonerName: "Nona",
     Comment: "Lorem ipsum dolor sit amet consectetur adipisicing elit. In magnam, earum cumque distinctio, facere necessitatibus praesentium possimus neque recusandae sed libero veritatis dolorem ratione delectus doloremque.",
   }
@@ -144,7 +155,7 @@ const testmonialsMarkup = (cardInfo) => {
   return `
       <div class="testmonial-card">
         <figure class="testmonial-img-container">
-          <img src="${cardInfo.image}" alt="Customer Image">
+          <img src="${cardInfo.placeholder_image}" data-src="${cardInfo.orignal_image}" alt="Customer Image" loading="lazy">
         </figure>
         <article class="feedback-box">
           <div class="rating-stars">
@@ -209,7 +220,6 @@ rightArrow.addEventListener("click", () => {
 })
 
 // Smooth scrolling
-// const slider = document.querySelectorAll(".slide-up");
 const slider = document.querySelectorAll(".from-bottom");
 const options = {
   threshold: 1,
@@ -223,7 +233,28 @@ const appearOnScroll = new IntersectionObserver((entries) => {
   )
 }, options)
 
-// slider.forEach((item) => {appearOnScroll.observe(item)})
 slider.forEach(slide => {
   appearOnScroll.observe(slide)
 })
+
+//Lazy Image Loading
+
+const lazyImages = document.querySelectorAll(".lazy-load");
+const option = {
+  root: null,
+  rootMargin: '0px',
+  threshold: 0.1,
+}
+
+const lazyObserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      const lazyImage = entry.target;
+      lazyImage.src = lazyImage.dataset.src;
+
+      lazyObserver.unobserve(lazyImage);
+    }
+  });
+}, option);
+
+lazyImages.forEach((image) => lazyObserver.observe(image));
