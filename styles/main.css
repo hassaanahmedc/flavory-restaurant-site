@@ -660,3 +660,13 @@ form button {
     cursor: pointer;
     border-radius: 30px;
 }
+
+img{
+    object-position: center;
+    object-fit: cover;
+}
+
+.lazy-load {
+    background-size: cover;
+    background-position: center;
+}

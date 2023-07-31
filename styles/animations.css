@@ -4,13 +4,7 @@
     box-sizing: border-box;
 }
 
-/* .from-bottom {
-    transform: translateY(30%);
-}
-
-.from-bottom.appear {
-    transform: translateY(0);
-} */
+/* Inersection Observer from Botttom */
 .from-bottom {
     opacity: 0;
     transform: translateY(30%);
@@ -21,4 +15,24 @@
 .fade-in {
     opacity: 1;
     transform: translateY(0);
+}
+
+/* Lazy Loading Images  */
+img{
+    object-position: center;
+    object-fit: cover;
+}
+
+.lazy-load {
+    background-size: cover;
+    background-position: center;
+}
+
+.lazy-load.loaded > img {
+    opacity: 1;
+}
+
+.lazy-load > img {
+    opacity: 0;
+    transition: opacity 200ms ease-in-out;
 }
