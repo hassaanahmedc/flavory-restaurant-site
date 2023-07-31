@@ -28,6 +28,7 @@ img{
     background-position: center;
 }
 
+/* Loading transition */
 .lazy-load.loaded > img {
     opacity: 1;
 }
