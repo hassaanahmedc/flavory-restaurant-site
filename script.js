@@ -227,7 +227,7 @@ rightArrow.addEventListener("click", () => {
 // Smooth scrolling
 const slider = document.querySelectorAll(".from-bottom");
 const options = {
-  threshold: 1,
+  threshold: .5,
 };
 
 const appearOnScroll = new IntersectionObserver((entries) => {
