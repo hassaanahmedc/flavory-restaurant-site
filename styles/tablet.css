@@ -1,0 +1,60 @@
+@media screen and (min-width: 680px) {
+
+    .hero-text h1 {
+        font-size: 2.3rem;
+    }
+
+    .hero-text p {
+        font-size: 1rem;
+    }
+
+    .menu {
+        font-size: 1rem;
+    }
+
+    .reservation {
+        font-size: 1rem;
+    }
+
+    .row-reverse {
+        flex-direction: row-reverse;
+    }
+
+    .content-info {
+        font-size: 1.3rem;
+    }
+
+    .content-info p {
+        font-size: 1rem;
+    }
+
+    .form-container {
+        min-width: 300px;
+        flex: 1;
+        padding: 2em;
+    }
+
+    .contact-us-container {
+        flex-direction: row;
+        gap: 1em;
+        max-width: unset;
+    }
+    .contact-img-container {
+        display: block;
+        flex: 1;
+        
+    }
+
+    .contact-img-container img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .form-container form {
+        margin-bottom: unset;
+    }
+    form button {
+        margin-bottom: unset;
+    }
+
+}
