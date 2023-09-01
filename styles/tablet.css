@@ -51,10 +51,27 @@
     }
 
     .form-container form {
+        display: initial;
         margin-bottom: unset;
+    }
+    .contact-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1em;
+    }
+    .field-box {
+        flex: 1;
+        min-width: 100px;
     }
     form button {
         margin-bottom: unset;
+    }
+
+    .ft-address{
+        width: 350px;
+    }
+    .doublecol{
+        justify-content: space-evenly;
     }
 
 }

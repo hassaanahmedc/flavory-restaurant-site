@@ -23,6 +23,19 @@ const close_toggle = () => {
 menu_close.addEventListener("click", close_toggle);
 toggle_menu.addEventListener("click", open_toggle);
 
+
+// Navbar on scroll
+
+const nav = document.querySelector("nav");
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 50) {
+    nav.classList.add("scrolled");
+  } else {
+    nav.classList.remove("scrolled");
+  }
+});
+
 // Food Menue Cards
 const cardsContainer = document.getElementById("food-cards-container");
 const loadmoreBtn = document.getElementById("load-more-btn");
@@ -85,7 +98,7 @@ const foodCards = [
 const generateCards = (cardInfo) => {
   return `
     <div class="food-card">
-    <div class="card-image-container lazy-load" style="background-image: url{${cardInfo.placeholder_image}}">
+    <div class="card-image-container" style="background-image: url{${cardInfo.placeholder_image}}">
       <img
         src="${cardInfo.orignal_image}"
         alt="${cardInfo.title}"
@@ -162,7 +175,7 @@ const testmonialCards = [
 const testmonialsMarkup = (cardInfo) => {
   return `
       <div class="testmonial-card">
-        <figure class="testmonial-img-container lazy-load" style="background-image: url{${cardInfo.placeholder_image}}">
+        <figure class="testmonial-img-container" style="background-image: url{${cardInfo.placeholder_image}}">
           <img src="${cardInfo.orignal_image}" alt="Customer Image" loading="lazy">
         </figure>
         <article class="feedback-box">
@@ -198,7 +211,7 @@ let currentCard = 0;
 let maxCards = cards.length - 1;
 
 cards.forEach((card, index) => {
-  card.style.transform = `translateX(${index * 110}%)`;
+  card.style.transform = `translateX(${index * 210}%)`;
 });
 
 leftArrow.addEventListener("click", () => {
@@ -208,7 +221,7 @@ leftArrow.addEventListener("click", () => {
     currentCard--;
   }
   cards.forEach((card, index) => {
-    card.style.transform = `translateX(${(index - currentCard) * 110}%)`;
+    card.style.transform = `translateX(${(index - currentCard) * 210}%)`;
   });
 });
 
@@ -220,7 +233,7 @@ rightArrow.addEventListener("click", () => {
     currentCard++;
   }
   cards.forEach((card, index) => {
-    card.style.transform = `translateX(${(index - currentCard) * 110}%)`;
+    card.style.transform = `translateX(${(index - currentCard) * 210}%)`;
   });
 });
 
