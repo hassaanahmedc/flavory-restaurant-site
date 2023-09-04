@@ -26,14 +26,16 @@ ul li a {
 }
 
 nav {
+  position: fixed;
+  top: 0;
   width: 100%;
   padding: 0.4em;
-  position: sticky;
-  top: 0;
   z-index: 99999999;
+  background-color: white;
 }
 nav.scrolled {
-  background: transparent;
+  background-color: #000;
+  color: white;
   transition: background 0.3s ease;
 }
 .nav-container {
@@ -56,15 +58,23 @@ nav.scrolled {
 
 .nav-links {
   position: absolute;
-  display: none;
   background-color: white;
+  color: black;
   font-size: small;
-  font-family: var(--paragraph_font);
-  top: -7px;
-  left: -19px;
+  top: 0;
+  left: -100%;
   width: 60%;
   height: 100vh;
   padding: 1em;
+  transition: left 0.3s ease;
+}
+
+#nav-xmark {
+  cursor: pointer;
+}
+
+#nav-xmark:hover {
+  color: red;
 }
 
 .hero-menu {
@@ -85,6 +95,7 @@ nav i:hover {
 .img-container {
   position: relative;
   object-fit: contain;
+  margin-top: 3em;
   background: #000;
 }
 
@@ -311,8 +322,8 @@ main {
   position: absolute;
   display: none;
   font-weight: bolder;
-  top: 43%;
-  left: 33%;
+  top: 36%;
+  left: 25%;
   color: white;
   font-size: 1.2rem;
 }
@@ -325,8 +336,8 @@ main {
   position: absolute;
   display: none;
   font-weight: bolder;
-  top: 47%;
-  left: 39%;
+  top: 39%;
+  left: 36%;
   color: white;
   font-size: 1.2rem;
 }
