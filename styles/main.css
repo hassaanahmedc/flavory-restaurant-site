@@ -53,6 +53,8 @@ nav.scrolled {
 .nav-links {
   position: absolute;
   font-size: small;
+  background-color: white;
+  color: black;
   top: 0;
   left: -100%;
   width: 300px;
