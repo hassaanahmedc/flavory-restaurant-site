@@ -17,6 +17,7 @@ toggle_menu.addEventListener("click", open_toggle);
 // Navbar on scroll
 
 const nav = document.querySelector("nav");
+const navLinks = document.querySelectorAll(".nav-container a");
 
 window.addEventListener("scroll", () => {
   if (window.scrollY > 50) {
@@ -87,29 +88,29 @@ const foodCards = [
 ];
 const generateCards = (cardInfo) => {
   return `
-    <div class="food-card">
-    <div class="card-image-container" style="background-image: url{${cardInfo.placeholder_image}}">
-      <img
-        src="${cardInfo.orignal_image}"
-        alt="${cardInfo.title}"
-        loading="lazy"
-      />
+      <div class="food-card">
+      <div class="card-image-container" style="background-image: url(${cardInfo.placeholder_image})">
+        <img
+          src="${cardInfo.orignal_image}"
+          alt="${cardInfo.title}"
+          loading="lazy"
+        />
+      </div>
+      <div class="card-info">
+        <h4><a href="">${cardInfo.title}</a><span>${cardInfo.price}</span></h4>
+        <p>
+          ${cardInfo.description}
+        </p>
+        <span>
+          <i class="fa-solid fa-star" style="color: #282828"></i>
+          <i class="fa-solid fa-star" style="color: #282828"></i>
+          <i class="fa-solid fa-star" style="color: #282828"></i>
+          <i class="fa-solid fa-star" style="color: #282828"></i>
+          <i class="fa-solid fa-star" style="color: #282828"></i>
+        </span>
+      </div>
     </div>
-    <div class="card-info">
-      <h4><a href="">${cardInfo.title}</a><span>${cardInfo.price}</span></h4>
-      <p>
-        ${cardInfo.description}
-      </p>
-      <span>
-        <i class="fa-solid fa-star" style="color: #282828"></i>
-        <i class="fa-solid fa-star" style="color: #282828"></i>
-        <i class="fa-solid fa-star" style="color: #282828"></i>
-        <i class="fa-solid fa-star" style="color: #282828"></i>
-        <i class="fa-solid fa-star" style="color: #282828"></i>
-      </span>
-    </div>
-  </div>
-    `;
+      `;
 };
 
 const cardsPerLoad = 3;

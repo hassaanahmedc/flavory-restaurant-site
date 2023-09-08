@@ -11,6 +11,9 @@
   --ascent_color: rgb(62, 62, 62);
 }
 
+body {
+  overflow-x: hidden;
+}
 /* Header Styling */
 .nav-container a {
   text-decoration: none;
@@ -47,23 +50,12 @@ nav.scrolled {
   margin: 0 0.8em;
 }
 
-.nav-container ul li {
-  padding: 0.6em;
-}
-
-.nav-container ul li a:hover {
-  transition: 0.2s ease-in-out;
-  color: red;
-}
-
 .nav-links {
   position: absolute;
-  background-color: white;
-  color: black;
   font-size: small;
   top: 0;
   left: -100%;
-  width: 60%;
+  width: 300px;
   height: 100vh;
   padding: 1em;
   transition: left 0.3s ease;
@@ -75,6 +67,34 @@ nav.scrolled {
 
 #nav-xmark:hover {
   color: red;
+}
+
+.nav-container ul li {
+  padding: 0.6em;
+}
+
+.nav-links li {
+  position: relative;
+  width: fit-content;
+}
+.nav-links li::before{
+  content: "";
+  display: block;
+  position: absolute;
+  top: 33px;
+  left: 8px;
+  width: 0;
+  height: 2px;
+  background-color: red;
+  transition: width 500ms ease;
+  opacity: 0;
+}
+.nav-links li:hover {
+  color: red;
+}
+.nav-links li:hover::before{
+  width: 92%;
+  opacity: 1; 
 }
 
 .hero-menu {
@@ -143,10 +163,6 @@ nav i:hover {
   margin-right: 5px;
 }
 
-.menu:hover {
-  background-color: rgb(255, 80, 80);
-}
-
 .reservation {
   border: 1px solid rgb(62, 62, 62);
   color: #ffffff;
@@ -208,7 +224,7 @@ h2, h3 {
 
 .section {
   min-width: 300px;
-  padding: 3em 0;
+  padding-top: 6em ;
 }
 
 .content-info > div {
@@ -358,6 +374,12 @@ main {
   cursor: pointer;
 }
 
+.primary-btn-hover:hover {
+  background-color: transparent;
+  outline: 2px solid rgb(255, 80, 80);
+  color: red !important;
+  transition: all .3s ease-in;
+}
 .learn-more {
   font-size: .8rem;
   font-weight: 400;
@@ -652,7 +674,7 @@ main {
   bottom: 30px;
 }
 
-form button {
+.btn-container button{
   border: none;
   line-height: 25px;
   margin-bottom: 1em;
@@ -711,6 +733,7 @@ form button {
 }
 
 .newsletter-field {
+  width: 83%;
   padding: 0.3em;
 }
 
@@ -735,4 +758,8 @@ form button {
   border: 1px solid white;
   cursor: pointer;
   border-radius: 30px;
+}
+
+.socials li:hover {
+  background-color: rgb(255, 75, 75);
 }

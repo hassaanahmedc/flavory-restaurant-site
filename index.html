@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
   <link rel="stylesheet" href="styles/main.css" />
   <link rel="stylesheet" href="styles/tablet.css" />
+  <link rel="stylesheet" href="styles/desktop.css" />
   <link rel="stylesheet" href="styles/animations.css" />
   <title>Flavory</title>
 </head>
@@ -29,7 +30,9 @@
           <li><a href="">Menu</a></li>
         </ul>
         <i class="fa-solid fa-bars" id="nav-menu"></i>
-        <a href="" class="hero-menu">Menu</a>
+        <div>
+          <a href="" class="hero-menu">Menu</a>
+        </div>
       </div>
     </nav>
     <div class="img-container">
@@ -40,7 +43,7 @@
           Delight your taste buds with our delectable creations made with
           passion and expertise.
         </p>
-        <a href="" class="Hero-btn menu">Menu</a>
+        <a href="" class="Hero-btn menu primary-btn-hover">Menu</a>
         <a href="" class="Hero-btn reservation">Reservation <i class="fa-solid fa-arrow-right"></i></a>
       </div>
     </div>
@@ -158,9 +161,9 @@
 
       <section class="section section-food-menu">
         <h2 class="from-bottom heading-center">Explore Our Today's Menu</h2>
-        <div id="food-cards-container from-bottom" class="food-cards-container">
+        <div id="food-cards-container" class="food-cards-container">
           <div class="food-card ">
-            <div class="card-image-container lazy-load  from-bottom"
+            <div class="card-image-container lazy-load"
               style="background-image: url(resources/images/body/low-res/niggets.gif);">
               <img src="resources/images/body/niggets.jpg" alt="Food Card Image" loading="lazy" />
             </div>
@@ -182,7 +185,7 @@
           </div>
 
           <div class="food-card">
-            <div class="card-image-container lazy-load  from-bottom"
+            <div class="card-image-container lazy-load"
               style="background-image: url(resources/images/body/low-res/ramen.gif);">
               <img src="resources/images/body/ramen.jpg" alt="Food Card Image" loading="lazy" />
             </div>
@@ -204,7 +207,7 @@
           </div>
 
           <div class="food-card">
-            <div class="card-image-container lazy-load from-bottom"
+            <div class="card-image-container lazy-load"
               style="background-image: url(resources/images/body/low-res/burger.gif);">
               <img src="resources/images/body/burger.jpg" alt="Food Card Image" loading="lazy" />
             </div>
@@ -226,7 +229,7 @@
           </div>
 
           <div class="food-card">
-            <div class="card-image-container lazy-load from-bottom"
+            <div class="card-image-container lazy-load"
               style="background-image: url(resources/images/body/low-res/burger-fries.gif);">
               <img src="resources/images/body/burger-fries.jpg" alt="Food Card Image" loading="lazy" />
             </div>
@@ -248,7 +251,7 @@
           </div>
 
           <div class="food-card">
-            <div class="card-image-container lazy-load from-bottom"
+            <div class="card-image-container lazy-load"
               style="background-image: url(resources/images/body/low-res/spagheti.gif);">
               <img src="resources/images/body/spagheti.jpg" alt="Food Card Image" loading="lazy" />
             </div>
@@ -270,7 +273,7 @@
           </div>
 
           <div class="food-card">
-            <div class="card-image-container lazy-load from-bottom"
+            <div class="card-image-container lazy-load"
               style="background-image: url(resources/images/body/low-res/pasta.gif);">
               <img src="resources/images/body/pasta.jpg" alt="Food Card Image" loading="lazy" />
             </div>
@@ -292,7 +295,7 @@
           </div>
         </div>
         <div class="food-manu-load-more">
-          <button id="load-more-btn" class="primary-btn from-bottom">
+          <button id="load-more-btn" class="primary-btn primary-btn-hover from-bottom">
             Load More
           </button>
         </div>
@@ -389,10 +392,10 @@
           </div>
 
           <div class="form-container">
-            <h3 class="heading-center">Book Your Table</h3>
+            <h3 class="heading-center from-bottom">Book Your Table</h3>
             <form action="" method="post">
 
-              <div class="contact-wrapper">
+              <div class="contact-wrapper from-bottom">
                 <div id="field-box" class="field-box">
                   <input type="text" id="name" class="input-field" placeholder="Name" required />
                 </div>
@@ -424,9 +427,9 @@
                   <input type="time" id="time" class="input-field" placeholder="Time" required />
                 </div>
               </div>
-              <button type="submit" id="submit" class="primary-btn">
-                Submit
-              </button>
+              <div class="btn-container">
+                <button type="submit" id="submit" class="primary-btn primary-btn-hover">Submit</button>
+              </div>
             </form>
           </div>
         </div>

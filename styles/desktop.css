@@ -1,49 +1,93 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+@media screen and (min-width: 990px) {
+    #nav-menu, #nav-xmark  {
+        display: none;
+    }
 
-:root {
-    --heading_font: 'Montserrat', sans-serif;
-    --paragraph_font: 'Open Sans', sans-serif;
-    ;
-    --primary_color: red;
-    --secondary_color: white;
-    --ascent_color: black;
-}
+    nav {
+        padding: unset;
+    }
 
-.nav-container a {
-    text-decoration: none;
+    .nav-container {
+        max-width: 1078px;
+        margin: 0 auto;
+    }
 
-}
+    .nav-container h1 {
+        font-size: 1.8rem;
+    }
+    .nav-links {
+        position: unset;
+        height: unset;
+        background-color: unset;
+        color: unset;
+        width: unset;
+        font-size: unset;
+        display: flex;
+        gap: 2em;
+        padding: .5em 0;
+    }
 
-ul li {
-    list-style: none;
+    .nav-links ul li {
+        padding: 0.6em 1em;
+    }
 
-}
+    .nav-links > li:last-child{
+        display: none;
+    }
 
-ul li a {
-    text-decoration: none;
+    .hero-menu {
+        display: block;
+        padding: .6em 2em;
+        background-color: rgb(255, 80, 80);
+        color: white !important;
+    }
 
-}
+    .hero-menu:hover {
+        background-color: transparent;
+        outline: 2px solid rgb(255, 80, 80);
+        color: red !important;
+    }
+    .hero-img {
+        height: 100vh;
+    }
 
-nav {
-    width: 100%;
+    .hero-text h1 {
+        font-size: 3.7rem;
+    }
 
-}
+    .hero-text p {
+        font-size: 1.1rem;
+    }
+    .form-container {
+        flex: 1.5;
+    }
 
-.nav-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    text-decoration: none;
+    .Hero-btn {
+        padding: .6em 2em;
+        font-size: 1.1rem;
+    }
 
-}
+    .reservation{
+        position: relative;
+        padding-right: 3em;
+    }
 
-.nav-links {
-    display: flex;
-    gap: 1.5em;
-    font-size: small;
-    justify-content: flex-end;
+    .reservation .fa-arrow-right {
+        position: absolute;
+        bottom: 17px;
+        right: 33px;
+        transition: right 300ms ease;
+    }
+
+    .reservation:hover .fa-arrow-right {
+        right: 20px;
+    }
+    .field-box {
+        flex: 1;
+        min-width: 121px;
+    }
+
+    .specialty-items {
+        flex-direction: row;
+    }
 }
